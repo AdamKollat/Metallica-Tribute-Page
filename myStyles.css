@@ -19,6 +19,7 @@ h1, h2, h3, h4 {
 }
 
 .legacy_image {
+    margin-top: 50px;
     height: 400px;
 }
 
@@ -79,4 +80,17 @@ form {
 
 blockquote {
     font-style: italic;
+}
+
+.button-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.like, .save {
+    margin-top: 10px;
+    margin-left: 5px;
 }
