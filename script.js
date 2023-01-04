@@ -1,11 +1,11 @@
 let n = 0;
 let saved = [];
 let list = document.getElementById("savedList");
-let saveButton = document.getElementsByClassName("save");
-let likeButton = document.getElementsByClassName("like");
+const saveButton = document.querySelectorAll(".save");
+const likeButton = document.querySelectorAll(".like");
 
 
-function onLoad() { // I have based this element on the code form the example provided for this task
+const onLoad = () => { // I have based this element on the code form the example provided for this task
     if (sessionStorage.getItem("hasCodeRunBefore") === null) {  // If code hasn't run before
         sessionStorage.setItem("savedItems", JSON.stringify(saved)); // Add the books array to sessionStorage
         sessionStorage.setItem("hasCodeRunBefore", true);   // Update ses
@@ -17,4 +17,14 @@ function onLoad() { // I have based this element on the code form the example pr
             list.appendChild(paragraph);   // Append new p element to the container element
         });
     }
+}
+
+for (let i = 0; i < likeButton.length; i++) {
+    likeButton[i].addEventListener('click', function() {
+        event.target.innerHTML = "Liked";
+    })
+}
+
+const saveToCollection = () => {
+
 }
