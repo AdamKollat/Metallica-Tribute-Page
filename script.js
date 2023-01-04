@@ -20,11 +20,20 @@ const onLoad = () => { // I have based this element on the code form the example
 }
 
 for (let i = 0; i < likeButton.length; i++) {
-    likeButton[i].addEventListener('click', function() {
-        event.target.innerHTML = "Liked";
+    likeButton[i].addEventListener('click', function(e) {
+        e.target.innerHTML = "Liked";
     })
 }
 
-const saveToCollection = () => {
-
+for (let i = 0; i < saveButton.length; i++) {
+    saveButton[i].addEventListener('click', function(e) {
+        let id = e.target.parentNode.id;       
+        let url = window.location.href;
+        let child = document.createElement("A");
+        child.innerHTML = `${url}#${id}`;  
+        child.href = `${url}#${id}`;
+        console.log(child)    
+        saved.push(child);
+        list.appendChild(child);       
+    })
 }
